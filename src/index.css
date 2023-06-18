@@ -36,7 +36,7 @@ header a {
 }
 
 .home {
-  background-image: url("/assets/home.png");
+  background-image: url("./assets/home.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
