@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 const HostVansDetails = () => {
   console.log("component executed..");
@@ -16,7 +16,9 @@ const HostVansDetails = () => {
 
   return (
     <div className="host-van-details">
-      <Link to="vans">Back to all vans</Link>
+      <Link to=".." relative="path">
+        Back to all vans
+      </Link>
       <div className="host-van-moreInfo">
         <img src={hostVanDetail.imageUrl} alt="host-van" />
         <div className="info">
@@ -25,6 +27,12 @@ const HostVansDetails = () => {
           <p>{`$${hostVanDetail.price}/day`}</p>
         </div>
       </div>
+      <div className="host-van-detailed-nav">
+        <Link to=".">Details</Link>
+        <Link to="pricing">Pricing</Link>
+        <Link to="Photos">Photos</Link>
+      </div>
+      <Outlet context={hostVanDetail} />
     </div>
   );
 };
