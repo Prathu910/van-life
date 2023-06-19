@@ -8,11 +8,9 @@ const VansItem = () => {
   React.useEffect(() => {
     fetch(`/api/vans/${params.id}`)
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setVanDetail(data.vans);
-      });
-  }, []);
+      .then((data) => setVanDetail(data.vans));
+  }, [params.id]);
+
   return (
     <div className="details container">
       <Link to="/vans">Go back to vans</Link>
