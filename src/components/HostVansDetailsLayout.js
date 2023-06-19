@@ -4,7 +4,9 @@ import { Link, Outlet } from "react-router-dom";
 const HostVansDetailsLayout = () => {
   return (
     <>
-      <HostVansDetailsLayout />
+      <Link to=".">Dashboard</Link>
+      <Link to="pricing">Pricing</Link>
+      <Link to="photos">Photos</Link>
       <Outlet />
     </>
   );

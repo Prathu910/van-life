@@ -30,12 +30,12 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVansDetailsLayout />}>
-              <Route index element={HostVansDetails} />
-              <Route path="pricing" element={HostVansPricing} />
-              <Route path="photos" element={HostVansPhotos} />
-            </Route>
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans/:id" element={<HostVansDetailsLayout />}>
+              <Route index element={<HostVansDetails />} />
+              <Route path="pricing" element={<HostVansPricing />} />
+              <Route path="photos" element={<HostVansPhotos />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

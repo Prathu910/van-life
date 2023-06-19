@@ -2,15 +2,17 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 const HostVansDetails = () => {
+  console.log("component executed..");
   const params = useParams();
 
   const [hostVanDetail, setHostVanDetail] = React.useState([]);
 
   React.useEffect(() => {
+    console.log("hello..");
     fetch(`/api/host/vans/${params.id}`)
       .then((res) => res.json())
       .then((data) => setHostVanDetail(data.vans));
-  }, []);
+  }, [params.id]);
 
   return (
     <div className="host-van-details">
