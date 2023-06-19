@@ -11,7 +11,7 @@ const Vans = () => {
   }, []);
 
   return (
-    <div className="vans container">
+    <div className="vans">
       {vans.map((van) => {
         return (
           <div className="van">

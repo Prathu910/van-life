@@ -1,32 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Inter", sans-serif;
+}
 /* *** TYPOGRAPHY *** */
 
 /* *** TYPOGRAPHY *** */
+
+/**** UTILS CLASS ****/
+a {
+  text-decoration: none;
+  color: black;
+}
+/**** UTILS CLASS ENDS ****/
 
 .container {
   max-width: 60%;
   margin: 0 auto;
-  padding: 1em 2em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/**** HEADER && FOOTER ****/
+
+header,
+.footer {
+  padding: 1em 2em;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 100px;
-  /* background-color: aqua;  */
+  background-color: rgb(234, 177, 247);
+}
+
+.footer {
+  background-color: rgb(234, 177, 247);
+  text-align: center;
+  margin-top: auto;
+}
+
+/**** HEADER && FOOTER ENDS****/
+
+.main-container {
+  min-height: 100%;
+  /* padding: 1rem 2rem; */
 }
 
 .links {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   gap: 2em;
 }
 
@@ -47,7 +80,7 @@ header a {
   justify-content: center;
   gap: 5rem;
   align-items: center;
-  height: 100vh;
+  height: 630px;
 }
 
 .home a {
@@ -64,6 +97,7 @@ header a {
 }
 
 .about {
+  padding: 1em 2em;
   display: flex;
   height: 100vh;
   flex-direction: column;
@@ -97,6 +131,7 @@ header a {
 }
 
 .vans {
+  padding: 1em 2em;
   padding-top: 3rem;
   display: flex;
   flex-wrap: wrap;
@@ -177,9 +212,105 @@ header a {
   background-color: rgb(21, 21, 21);
 }
 
+/*  navbar for HOST */
+
+.host-nav {
+  padding-top: 1.6rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.host-nav a {
+  font-family: inherit;
+  color: black;
+  text-decoration: none;
+}
+
+/* HOST VANS LISTING */
+
+.host-container {
+  padding: 1em 2em;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.host-vans {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.host-van {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.host-van img {
+  width: 20%;
+  border-radius: 10px;
+}
+
+.host-van-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* HOST VANS LISTING ENDS */
+
+/* HOST VANS DETAILS PAGE */
+
+.host-van-details {
+  padding: 1em 2em;
+  /* min-height: 500px; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.host-van-moreInfo {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.host-van-moreInfo .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.host-van-moreInfo img {
+  width: 30%;
+  border-radius: 10px;
+}
+
+.info button {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+/* HOST VANS DETAILS PAGE ENDS */
+
 /* MOBILE */
 
 @media only screen and (max-width: 600px) {
+  html {
+    font-size: 0.8rem;
+  }
   .container {
     min-width: 100%;
   }

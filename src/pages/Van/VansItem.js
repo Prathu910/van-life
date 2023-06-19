@@ -12,7 +12,7 @@ const VansItem = () => {
   }, [params.id]);
 
   return (
-    <div className="details container">
+    <div className="details">
       <Link to="/vans">Go back to vans</Link>
       <img src={vanDetail.imageUrl} alt="img" />
       <button>{vanDetail.type}</button>
