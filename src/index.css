@@ -180,6 +180,9 @@ header a {
 /* MOBILE */
 
 @media only screen and (max-width: 600px) {
+  .container {
+    min-width: 100%;
+  }
   .van {
     max-width: 100%;
   }
