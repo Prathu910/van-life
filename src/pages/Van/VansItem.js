@@ -13,7 +13,9 @@ const VansItem = () => {
 
   return (
     <div className="details">
-      <Link to="/vans">Go back to vans</Link>
+      <Link to=".." relative="path">
+        Go back to vans
+      </Link>
       <img src={vanDetail.imageUrl} alt="img" />
       <button>{vanDetail.type}</button>
       <h1>{vanDetail.name}</h1>

@@ -1,14 +1,17 @@
 import React from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 
 const HostVansDetails = () => {
-  console.log("component executed..");
   const params = useParams();
+
+  const activeStyle = {
+    borderBottom: "2px solid black",
+    fontWeight: "bolder",
+  };
 
   const [hostVanDetail, setHostVanDetail] = React.useState([]);
 
   React.useEffect(() => {
-    console.log("hello..");
     fetch(`/api/host/vans/${params.id}`)
       .then((res) => res.json())
       .then((data) => setHostVanDetail(data.vans));
@@ -16,9 +19,9 @@ const HostVansDetails = () => {
 
   return (
     <div className="host-van-details">
-      <Link to=".." relative="path">
+      <NavLink to=".." relative="path">
         Back to all vans
-      </Link>
+      </NavLink>
       <div className="host-van-moreInfo">
         <img src={hostVanDetail.imageUrl} alt="host-van" />
         <div className="info">
@@ -28,9 +31,25 @@ const HostVansDetails = () => {
         </div>
       </div>
       <div className="host-van-detailed-nav">
-        <Link to=".">Details</Link>
-        <Link to="pricing">Pricing</Link>
-        <Link to="Photos">Photos</Link>
+        <NavLink
+          to="."
+          end
+          style={({ isActive }) => (isActive ? activeStyle : null)}
+        >
+          Details
+        </NavLink>
+        <NavLink
+          to="pricing"
+          style={({ isActive }) => (isActive ? activeStyle : null)}
+        >
+          Pricing
+        </NavLink>
+        <NavLink
+          to="Photos"
+          style={({ isActive }) => (isActive ? activeStyle : null)}
+        >
+          Photos
+        </NavLink>
       </div>
       <Outlet context={hostVanDetail} />
     </div>
