@@ -20,13 +20,28 @@ const Vans = () => {
       <h2>Explore Our Vans Options</h2>
 
       <div className="vans-filter">
-        <button onClick={() => setSearchParams({ type: "simple" })}>
+        <button
+          className={vanType === "simple" ? `clicked` : ""}
+          onClick={() => {
+            return setSearchParams({ type: "simple" });
+          }}
+        >
           Simple
         </button>
-        <button onClick={() => setSearchParams({ type: "luxury" })}>
+        <button
+          className={vanType === "luxury" ? `clicked` : ""}
+          onClick={() => {
+            return setSearchParams({ type: "luxury" });
+          }}
+        >
           Luxury
         </button>
-        <button onClick={() => setSearchParams({ type: "rugged" })}>
+        <button
+          className={vanType === "rugged" ? `clicked` : ""}
+          onClick={() => {
+            return setSearchParams({ type: "rugged" });
+          }}
+        >
           Rugged
         </button>
         {vanType && (

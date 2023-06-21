@@ -39,8 +39,12 @@ button:focus {
 
 button:active {
   transform: translateY(4px);
-  /* box-shadow: black 1px 1px 2px; */
   box-shadow: none;
+}
+
+.clicked {
+  background-color: #d3e886;
+  color: black;
 }
 /**** UTILS CLASS ENDS ****/
 
@@ -103,6 +107,7 @@ header a {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-align: center;
   text-shadow: 3px 2px 5px rgba(0, 0, 0, 1);
   color: white;
   display: flex;
@@ -369,6 +374,26 @@ header a {
   border-radius: 12px;
 }
 
+/**** ERROR PAGE ****/
+
+.error-container {
+  height: 90vh;
+  padding: 1em 2em;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container h1 {
+  text-align: center;
+}
+
+.error-container button {
+  padding: 10px 15px;
+}
+/**** ERROR PAGE ENDS ****/
 /**** HOST VANS DETAILS PAGE ENDS ****/
 
 /* MOBILE */

@@ -79,6 +79,8 @@ createServer({
     this.logging = false;
 
     this.get("/vans", (schema, request) => {
+      // Manual Error for testing....
+      // return new Response(400, {}, { error: "Error fetching data" });
       return schema.vans.all();
     });
 
@@ -89,6 +91,7 @@ createServer({
 
     this.get("/host/vans", (schema, request) => {
       // Hard-code the hostId for now
+      // return new Response(400, {}, { error: "Error fetching data" });
       return schema.vans.where({ hostId: "123" });
     });
 
