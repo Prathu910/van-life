@@ -1,24 +1,19 @@
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLoaderData } from "react-router-dom";
+import { getVans } from "../../api";
+
+export function loader() {
+  return getVans();
+}
 
 const Vans = () => {
-  const [vans, setVans] = React.useState([]);
+  const vans = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
   const vanType = searchParams.get("type");
-
-  React.useEffect(() => {
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
-  }, []);
 
   const filteredVans = vanType
     ? vans.filter((van) => vanType === van.type)
     : vans;
-
-  if (!vans.length) {
-    return <h2>Loading...</h2>;
-  }
 
   return (
     <div className="vans-container">
@@ -50,7 +45,12 @@ const Vans = () => {
                 <p>{van.name}</p>
                 <p>${van.price}/day</p>
               </div>
-              <Link to={`/vans/${van.id}`}>{van.type}</Link>
+              <Link
+                to={`/vans/${van.id}`}
+                state={{ search: `?${searchParams.toString()}`, type: vanType }}
+              >
+                {van.type}
+              </Link>
             </div>
           );
         })}
