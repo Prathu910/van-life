@@ -15,22 +15,28 @@ const Header = () => {
       </div>
       <div className="links">
         <NavLink
-          to="/about"
+          to="about"
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
           About
         </NavLink>
         <NavLink
-          to="/vans"
+          to="vans"
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
           Vans
         </NavLink>
         <NavLink
-          to="/host"
+          to="host"
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
           Host
+        </NavLink>
+        <NavLink
+          to="login"
+          style={({ isActive }) => (isActive ? activeStyle : null)}
+        >
+          Login
         </NavLink>
       </div>
     </header>

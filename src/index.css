@@ -394,6 +394,37 @@ header a {
   padding: 10px 15px;
 }
 /**** ERROR PAGE ENDS ****/
+
+/**** LOGIN  PAGE START ****/
+.login-form {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+}
+
+.login-form input {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: inherit;
+}
+
+.login-form button {
+  padding: 1rem;
+}
+
+/**** LOGIN  PAGE ENDS ****/
+
 /**** HOST VANS DETAILS PAGE ENDS ****/
 
 /* MOBILE */
