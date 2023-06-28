@@ -1,7 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { auth } from "../api";
 
 const Header = () => {
+  const [loginStatus, setLoginStatus] = React.useState(false);
+  console.log(loginStatus);
+  React.useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLoginStatus(true);
+      }
+    });
+  }, []);
+
   const activeStyle = {
     borderBottom: "2px solid white",
     fontWeight: "bolder",
@@ -33,10 +44,10 @@ const Header = () => {
           Host
         </NavLink>
         <NavLink
-          to="login"
+          to={loginStatus ? `logout` : `login`}
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
-          Login
+          {loginStatus ? `Logout` : `Login`}
         </NavLink>
       </div>
     </header>

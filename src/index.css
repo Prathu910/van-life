@@ -408,22 +408,128 @@ header a {
 .login-form form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 40%;
+  gap: 1.5rem;
+  width: 70%;
+}
+
+.login-form form p {
+  text-align: center;
+}
+
+.login-form form a {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .login-form input {
   padding: 1rem;
+  border: none;
+  border-bottom: 2px solid #487af0;
   border-radius: 10px;
   font-size: 1.2rem;
   font-family: inherit;
 }
 
+.login-form input:focus {
+  outline: none;
+}
+
 .login-form button {
+  width: 50%;
+  align-self: center;
   padding: 1rem;
+  font-size: 1rem;
+}
+
+.need-to-login {
+  color: red;
 }
 
 /**** LOGIN  PAGE ENDS ****/
+
+/**** LOGOUT  PAGE STARTS ****/
+
+.logout-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logout-container button {
+  font-size: 1rem;
+  padding: 15px 30px;
+}
+
+/**** LOGOUT  PAGE ENDS ****/
+
+/**** Dashboard  PAGE STARTS ****/
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.income-stats,
+.reviews-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.income {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/**** Dashboard  PAGE ENDS ****/
+
+/**** Income  PAGE STARTS ****/
+
+.income-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.income-container span {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.income,
+.transaction-report {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/**** Income  PAGE ENDS ****/
 
 /**** HOST VANS DETAILS PAGE ENDS ****/
 
@@ -444,5 +550,13 @@ header a {
   }
   .about a {
     width: 40%;
+  }
+
+  .links {
+    gap: 0.7rem;
+  }
+
+  .login-form form {
+    width: auto;
   }
 }

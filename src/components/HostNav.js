@@ -27,12 +27,6 @@ const HostNav = () => {
       >
         Vans
       </NavLink>
-      <NavLink
-        to="reviews"
-        style={({ isActive }) => (isActive ? activeStyle : null)}
-      >
-        Reviews
-      </NavLink>
     </div>
   );
 };
