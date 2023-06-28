@@ -52,7 +52,7 @@ const Login = () => {
         />
         {error && <b>{error}</b>}
         <p>
-          don't have an account <Link to="/signup">Sign Up</Link>
+          Don't have an account <Link to="/signup">Sign Up</Link>
         </p>
         <button type="submit" onClick={(e) => handleSubmit(e)}>
           Login

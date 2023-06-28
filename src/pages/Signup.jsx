@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../api";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -48,6 +48,9 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         {error && <b>{error}</b>}
+        <p>
+          Already have an account ? <Link to="/login">Login</Link>
+        </p>
         <button type="submit" onClick={(e) => handleSubmit(e)}>
           Sign Up
         </button>

@@ -409,7 +409,7 @@ header a {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 70%;
+  width: 60%;
 }
 
 .login-form form p {
@@ -432,6 +432,10 @@ header a {
 
 .login-form input:focus {
   outline: none;
+}
+
+.login-form input::placeholder {
+  text-align: center;
 }
 
 .login-form button {
