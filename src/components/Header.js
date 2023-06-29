@@ -1,22 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { auth } from "../api";
+import { loginContext } from "../App";
 
 const Header = () => {
-  const [loginStatus, setLoginStatus] = React.useState(false);
-  console.log(loginStatus);
-  React.useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setLoginStatus(true);
-      }
-    });
-  }, []);
-
+  const { loginStatus, toggleLogin } = React.useContext(loginContext);
   const activeStyle = {
     borderBottom: "2px solid white",
     fontWeight: "bolder",
   };
+  React.useEffect(() => {
+    toggleLogin();
+  });
   return (
     <header className="">
       <div className="logo">

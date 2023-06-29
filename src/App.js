@@ -25,6 +25,7 @@ import Login, { loader as loginLoader } from "./pages/Login";
 import Signup from "./pages/Signup";
 import Logout from "./pages/Logout";
 import { requireAuth } from "./utils";
+import { auth } from "./api";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -105,9 +106,25 @@ const router = createBrowserRouter(
   )
 );
 
+const loginContext = React.createContext();
 function App() {
+  const [loginStatus, setLoginStatus] = React.useState(false);
+  function toggleLogin() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLoginStatus(true);
+      } else {
+        setLoginStatus(false);
+      }
+    });
+  }
   // Example site - https://vans-life-app.netlify.app/
-  return <RouterProvider router={router} />;
+  return (
+    <loginContext.Provider value={{ loginStatus, toggleLogin }}>
+      <RouterProvider router={router} />
+    </loginContext.Provider>
+  );
 }
 
 export default App;
+export { loginContext };

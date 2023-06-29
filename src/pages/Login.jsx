@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useNavigate, Link, redirect } from "react-router-dom";
 import { auth } from "../api";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { loginContext } from "../App";
 
 export function loader({ request }) {
   if (localStorage.getItem("login")) return redirect("/logout");
@@ -17,6 +18,7 @@ const Login = () => {
   const [error, setError] = React.useState("");
   const message = useLoaderData();
   const navigate = useNavigate();
+  const { toggleLogin } = React.useContext(loginContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,6 +27,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
           localStorage.setItem("login", JSON.stringify("true"));
+          toggleLogin();
           navigate("/login");
         })
         .catch((err) => setError(err.message));
